@@ -8,4 +8,4 @@ spec:
     app: bookmyshow
   ports:
     - port: 80 # The port you access in the browser
-      targetPort: 3000 # <--- MUST MATCH the containerPort in deployment.yaml
+      targetPort: 80 # <--- MUST MATCH the containerPort in deployment.yaml
