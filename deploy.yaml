@@ -5,9 +5,9 @@
   gather_facts: false
 
   tasks:
-    - name: Apply Kubernetes Manifests
+    - name: Apply Kubernetes Manifests (Deployment & Service)
       kubernetes.core.k8s:
         state: present
-        # k8s folder containing deployment.yaml and service.yaml
-        src: k8s/
-        namespace: default
+        src: "{{ item }}"
+      with_fileglob:
+        - "/home/ec2-user/jenkins-data/workspace/bookmyshow/k8s/*.yaml"
