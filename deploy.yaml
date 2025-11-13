@@ -9,5 +9,6 @@
       kubernetes.core.k8s:
         state: present
         src: "{{ item }}"
+        namespace: default
       with_fileglob:
         - "/home/ec2-user/jenkins-data/workspace/bookmyshow/k8s/*.yaml"
