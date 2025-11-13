@@ -7,7 +7,7 @@
   tasks:
     - name: Apply Kubernetes Manifests (Deployment & Service)
       kubernetes.core.k8s:
-        state: absent
+        state: present
         src: "{{ item }}"
         namespace: default
       with_fileglob:
