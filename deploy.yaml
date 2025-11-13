@@ -1,0 +1,13 @@
+---
+- name: Deploy to EKS Cluster
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Apply Kubernetes Manifests
+      kubernetes.core.k8s:
+        state: present
+        # k8s folder containing deployment.yaml and service.yaml
+        src: k8s/
+        namespace: default
