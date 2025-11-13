@@ -42,7 +42,7 @@ pipeline {
                     echo "Triggering Ansible Deployment..."
                     // 2. Run the Ansible Playbook
                     ansiblePlaybook(
-                        playbook: 'deploy.yml',
+                        playbook: 'deploy.yaml',
                         inventory: 'localhost,',  // It treats localhost as a list
                         colorized: true,
                         installation: 'ansible'  
